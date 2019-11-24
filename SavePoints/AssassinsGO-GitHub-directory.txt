@@ -1,0 +1,97 @@
+Here are links to project files built in Unity 2019.2 using PostProcessing version 2:
+
+GitHub project: Project Setup and iTween (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/49bdea9131281c02005215f143b4ff29e0e1bf2d
+
+GitHub project: More iTween (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/5f40f7ca1aacdb12a98797b778f5d20884c8d6e7
+
+GitHub project: Scene Setup (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/0355e53afd29fd8f6ffc87ffa89e370e0df27a64
+
+GitHub project: PlayerMover (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/de4115124117c5768e55fdc483ddddddb8f446fa
+
+GitHub project: Move Methods (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/3d9dbc22027ecf80f9944bf10d5d5cf1b9253512
+
+GitHub project: PlayerInput (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/f958ce40db0f67fe9ed1ecb8c6aa4e8b06143d60
+
+GitHub project: PlayerInput Properties (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/9efecf101d0ab9d9bb336deca49f84e3013a711d
+
+GitHub project: Player Manager (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/82b764a4f54a62eb130c8cdedcee775ed5c340b4
+
+GitHub project: The Game Board (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/bafa91f099779b7f9ab6d4076ce7a97270326536
+
+GitHub project: Nodes  (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/15b171fdd64a7eaa281e6c912a1ba6a482283bee
+
+GitHub project: Neighbor Nodes Part 1 (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/251c69e2543a01d5e3ce6b909f517d786a7f4ba3
+
+GitHub project: Neighbor Nodes Part 2 (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/e449df6b245fb47a52b5033affb68fd2311890f6
+
+GitHub project: Node initialization (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/8c3f1d2d17942b3b4fdb484aead1abef8ada6b4a
+
+GitHub project: Links (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/0b02651f7265dfa0eaf2fec951076fc838d0ca32
+
+GitHub project: Linking Nodes (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/b363a612da5306b5fc1bb0f31c9de348266df949
+
+GitHub project: Board Movement (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/4d2ab0249d07d9ae0ecaa21d2a1e72cd640a8102
+
+GitHub project: Obstacles (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/ae83ea02a256b621b07c04a1ada6e18296986327
+
+GitHub project: PlayerNode (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/3237ea66fb000bf6558c75a29cc48b0827073ffe
+
+GitHub project: The GameManager Part 1 (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/20ef7aeb547ef7db74e20f8d25060566605a997f
+
+GitHub project: The GameManager Part 2 (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/3325f0edd7602b1257cf4412cca26dc9e31a1bcc
+
+GitHub project: ScreenFader (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/e1f564223a9250ffcb90c9fd46c6267dd6342263
+
+GitHub project: GameManager Events (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/db0d23aa3f77905fac34974bac81e258f08de0f5
+
+GitHub project: Goal Node (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/5a52ea19a9467c7a4f85a8faf724019afaa78712
+
+GitHub project: InitBoard (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/605ca794d88597428b469ecfae02734a5db966d1
+
+GitHub project: Level Win (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/5903ac41bb4b874f46dee8c7ecf8dbfd99d55815
+
+GitHub project: End Screen Blur (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/3525d1241b1a9b12edc6c6643ed0c32224a17df9
+
+GitHub project: EndScreen UI Part 1 (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/937a8df0ea37aea9e30dd404d81bd04109071a7c
+
+GitHub project: EndScreen UI Part 2 (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/4cf0a0a0bdcb9785f7c105067126482530f2696f
+
+GitHub project: Graphic Mover (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/701c7b1f076310380f1c3134174d40b4bdeddb78
+
+GitHub project: EndScreen GraphicMovers (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/7856171db3fd27f5546f6b7fc5098e44e0623fd6
+
+GitHub project: StartScreen (Unity 2019.2)
+https://github.com/UnityGameAcademy/AssassinsGO/tree/a3bb0f41a62ab917601c9690c4587926dde3d48c
+
+
+

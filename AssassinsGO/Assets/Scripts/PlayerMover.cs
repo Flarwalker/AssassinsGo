@@ -12,10 +12,6 @@ public class PlayerMover : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        Move(new Vector3(2f, 0f, 0f), 1f);
-        Move(new Vector3(4f, 0f, 0f), 3f);
-        Move(new Vector3(4f, 0f, 2f), 5f);
-        Move(new Vector3(4f, 0f, 4f), 7f);
     }
 
     public void Move (Vector3 destinationPos, float delayTime = 0.25f) {
@@ -42,5 +38,25 @@ public class PlayerMover : MonoBehaviour {
         iTween.Stop(this.gameObject);
         this.transform.position = destinationPos;
         isMoving = false;
+    }
+
+    public void MoveRight () {
+        Vector3 newPostition = this.transform.position + new Vector3(-2, 0, 0);
+        Move(newPostition, 0);
+    }
+
+    public void MoveLeft () {
+        Vector3 newPostition = this.transform.position + new Vector3(2, 0, 0);
+        Move(newPostition, 0);
+    }
+
+    public void MoveForward () {
+        Vector3 newPostition = this.transform.position + new Vector3(0, 0, 2);
+        Move(newPostition, 0);
+    }
+
+    public void MoveBackward () {
+        Vector3 newPostition = this.transform.position + new Vector3(0, 0, -2);
+        Move(newPostition, 0);
     }
 }

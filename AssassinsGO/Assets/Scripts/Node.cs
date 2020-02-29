@@ -9,6 +9,9 @@ public class Node : MonoBehaviour {
   private List<Node> m_neighorNodes = new List<Node>();
   public List<Node> NeighorNodes { get { return m_neighorNodes; } }
 
+  private List<Node> m_linkedNodes = new List<Node>();
+  public List<Node> LinkedNodes { get { return m_linkedNodes; } }
+
   private Board m_board;
 
   public GameObject geometry;
@@ -22,6 +25,8 @@ public class Node : MonoBehaviour {
   private bool m_isInitialized = false;
 
   public float delay = 1f;
+
+  public GameObject linkPrefab;
 
   private void Awake () {
     m_board = Object.FindObjectOfType<Board>();
@@ -80,7 +85,29 @@ public class Node : MonoBehaviour {
   private IEnumerator InitNeighborRoutine () {
     yield return new WaitForSeconds(delay);
     foreach (Node n in m_neighorNodes) {
-      n.InitNode();
+      if (!m_linkedNodes.Contains(n)) {
+        LinkNode(n);
+        n.InitNode();
+      }
+    }
+  }
+
+  private void LinkNode (Node targetNode) {
+    if (linkPrefab != null) {
+      GameObject linkInstance = Instantiate(linkPrefab, transform.position, Quaternion.identity);
+      linkInstance.transform.parent = transform;
+
+      Link link = linkInstance.GetComponent<Link>();
+      if (link != null) {
+        link.DrawLink(transform.position, targetNode.transform.position);
+      }
+      if (!m_linkedNodes.Contains(targetNode)) {
+        m_linkedNodes.Add(targetNode);
+      }
+
+      if (!targetNode.LinkedNodes.Contains(this)) {
+        targetNode.LinkedNodes.Add(this);
+      }
     }
   }
 

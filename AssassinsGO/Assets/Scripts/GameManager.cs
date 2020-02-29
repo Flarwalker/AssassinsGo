@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour {
 
   public float delay = 1f;
 
+  public UnityEvent startLevelEvent;
+  public UnityEvent playLevelEvent;
+  public UnityEvent endLevelEvent;
+
   private void Awake () {
     m_board = Object.FindObjectOfType<Board>().GetComponent<Board>();
     m_player = Object.FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>();
@@ -49,12 +53,20 @@ public class GameManager : MonoBehaviour {
     while (!m_hasLevelStarted) {
       yield return null;
     }
+
+    if (startLevelEvent !=null) {
+      startLevelEvent.Invoke();
+    }
   }
   
   private IEnumerator PlayLevelRoutine () {
     m_isGamePlaying = true;
     yield return new WaitForSeconds(delay);
     m_player.playerInput.InputEnabled = true;
+
+    if (playLevelEvent != null) {
+      playLevelEvent.Invoke();
+    }
 
     while(!m_isGameOver) {
       yield return null;
@@ -63,6 +75,10 @@ public class GameManager : MonoBehaviour {
   
   private IEnumerator EndLevelRoutine () {
     m_player.playerInput.InputEnabled = false;
+
+    if (endLevelEvent != null) {
+      endLevelEvent.Invoke();
+    }
 
     while (!m_hasLevelFinished) {
       yield return null;

@@ -21,12 +21,20 @@ public class PlayerMover : MonoBehaviour {
     m_board = Object.FindObjectOfType<Board>().GetComponent<Board>();
   }
 
+  private void Start () {
+    UpdateBoard();
+
+    if (m_board != null && m_board.PlayerNode != null) {
+      m_board.PlayerNode.InitNode();
+    }
+  }
+
   // Moves the Player
   public void Move (Vector3 destinationPos, float delayTime = 0.25f) {
     if (m_board != null) {
       Node targetNode = m_board.FindNodeAt(destinationPos);
 
-      if (targetNode != null) {
+      if (targetNode != null && m_board.PlayerNode.LinkedNodes.Contains(targetNode)) {
         StartCoroutine(MoveRoutine(destinationPos, delayTime));
       }
     }
@@ -53,6 +61,7 @@ public class PlayerMover : MonoBehaviour {
     iTween.Stop(this.gameObject);
     this.transform.position = destinationPos;
     isMoving = false;
+    UpdateBoard();
   }
 
   // Move the Player Right 2 Units
@@ -77,5 +86,11 @@ public class PlayerMover : MonoBehaviour {
   public void MoveBackward () {
     Vector3 newPostition = this.transform.position + new Vector3(0f, 0f, -Board.spacing);
     Move(newPostition, 0);
+  }
+
+  private void UpdateBoard () {
+    if (m_board != null) {
+      m_board.UpdatePlayerNode();
+    }
   }
 }

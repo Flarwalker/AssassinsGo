@@ -11,7 +11,6 @@ public class Node : MonoBehaviour {
   // Link Class Variables
   private Board m_board;
   private bool m_isInitialized = false;
-  public bool autoRun;
 
   private Vector2 m_coordinate;
   public Vector2 Coordinate { get { return Utility.Vector2Round(m_coordinate); } }
@@ -39,10 +38,6 @@ public class Node : MonoBehaviour {
   void Start() {
     if (geometry != null) {
       geometry.transform.localScale = Vector3.zero;
-
-      if (autoRun) {
-        InitNode();
-      }
 
       if (m_board != null) {
         m_neighorNodes = FindNeighbors(m_board.AllNodes);

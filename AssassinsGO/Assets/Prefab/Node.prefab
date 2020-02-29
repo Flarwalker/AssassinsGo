@@ -126,5 +126,5 @@ MonoBehaviour:
   geometry: {fileID: 6261173591896227839}
   scaleTime: 0.3
   easeType: 15
-  autoRun: 1
+  autoRun: 0
   delay: 1

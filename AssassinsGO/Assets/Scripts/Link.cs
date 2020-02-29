@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Link : MonoBehaviour {
+  // Link Geometry Settings
   public float borderWidth = 0.02f;
   public float lineThickness = 0.5f;
 
-  public float scaleTime = 0.25f;
+  // iTween Settings
   public float delay = 0.1f;
+  public float scaleTime = 0.25f;
   public iTween.EaseType easeType = iTween.EaseType.easeInOutExpo;
 
+  // Draws the Link from the starting position to the ending position.
   public void DrawLink(Vector3 startPos, Vector3 endPos) {
     transform.localScale = new Vector3(lineThickness, 1f, 0f);
 

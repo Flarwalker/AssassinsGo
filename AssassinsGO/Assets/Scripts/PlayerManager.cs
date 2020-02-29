@@ -5,37 +5,39 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMover))]
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerManager : MonoBehaviour {
-    public PlayerMover playerMover;
-    public PlayerInput playerInput;
+  // References the the Mover and Input Classes
+  public PlayerMover playerMover;
+  public PlayerInput playerInput;
 
-    private void Awake () {
-        playerMover = GetComponent<PlayerMover>();
-        playerInput = GetComponent<PlayerInput>();
-        playerInput.InputEnabled = true;
+  // Get the Mover and Input Objects
+  private void Awake () {
+    playerMover = GetComponent<PlayerMover>();
+    playerInput = GetComponent<PlayerInput>();
+    playerInput.InputEnabled = true;
+  }
+
+  // Checks for Movement and Moves the Player
+  void Update() {
+    if (playerMover.isMoving) {
+      return;
     }
 
-    // Update is called once per frame
-    void Update() {
-        if (playerMover.isMoving) {
-            return;
-        }
+    playerInput.GetKeyInput();
 
-        playerInput.GetKeyInput();
-
-        if (playerInput.V == 0) {
-            if (playerInput.H > 0) {
-                playerMover.MoveLeft();
-            } else if (playerInput.H < 0) {
-                playerMover.MoveRight();
-            }
-        }
-
-        if (playerInput.H == 0) {
-            if (playerInput.V < 0) {
-                playerMover.MoveBackward();
-            } else if (playerInput.V > 0) {
-                playerMover.MoveForward();
-            }
-        }
+    if (playerInput.V == 0) {
+      if (playerInput.H > 0) {
+        playerMover.MoveLeft();
+      } else if (playerInput.H < 0) {
+        playerMover.MoveRight();
+      }
     }
+
+    if (playerInput.H == 0) {
+      if (playerInput.V < 0) {
+        playerMover.MoveBackward();
+      } else if (playerInput.V > 0) {
+        playerMover.MoveForward();
+      }
+    }
+  }
 }

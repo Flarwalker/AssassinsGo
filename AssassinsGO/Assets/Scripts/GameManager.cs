@@ -70,10 +70,13 @@ public class GameManager : MonoBehaviour {
 
     while(!m_isGameOver) {
       yield return null;
+      m_isGameOver = IsWinner();
     }
+
   }
   
   private IEnumerator EndLevelRoutine () {
+
     m_player.playerInput.InputEnabled = false;
 
     if (endLevelEvent != null) {
@@ -94,6 +97,13 @@ public class GameManager : MonoBehaviour {
 
   public void PlayLevel() {
     m_hasLevelStarted = true;
+  }
+
+  private bool IsWinner() {
+    if (m_board.PlayerNode != null) {
+      return (m_board.PlayerNode == m_board.GoalNode);
+    }
+    return false;
   }
 
 }

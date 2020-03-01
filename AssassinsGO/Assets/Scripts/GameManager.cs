@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
 
   public float delay = 1f;
 
+  public UnityEvent setUpEvent;
   public UnityEvent startLevelEvent;
   public UnityEvent playLevelEvent;
   public UnityEvent endLevelEvent;
@@ -48,6 +49,10 @@ public class GameManager : MonoBehaviour {
   }
 
   private IEnumerator StartLevelRoutine () {
+    if (setUpEvent != null) {
+      setUpEvent.Invoke();
+    }
+
     m_player.playerInput.InputEnabled = false;
 
     while (!m_hasLevelStarted) {

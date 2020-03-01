@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour {
   // Reference to the game board
-  public Board m_board;
+  private Board m_board;
+
+  private PlayerCompass m_playerCompass;
 
   // Is the Player currently moving?
   public bool isMoving = false;
@@ -19,6 +21,7 @@ public class PlayerMover : MonoBehaviour {
 
   private void Awake () {
     m_board = Object.FindObjectOfType<Board>().GetComponent<Board>();
+    m_playerCompass = Object.FindObjectOfType<PlayerCompass>().GetComponent<PlayerCompass>();
   }
 
   private void Start () {
@@ -38,6 +41,10 @@ public class PlayerMover : MonoBehaviour {
 
   // Start and stop the Movement animation
   private IEnumerator MoveRoutine (Vector3 destinationPos, float delayTime) {
+    if (m_playerCompass != null) {
+      m_playerCompass.ShowArrows(false);
+    }
+
     isMoving = true;
     destination = destinationPos;
     yield return new WaitForSeconds(delayTime);
@@ -58,6 +65,10 @@ public class PlayerMover : MonoBehaviour {
     this.transform.position = destinationPos;
     isMoving = false;
     UpdateBoard();
+
+    if (m_playerCompass != null) {
+      m_playerCompass.ShowArrows(true);
+    }
   }
 
   // Move the Player Right 2 Units

@@ -28,6 +28,7 @@ public class Node : MonoBehaviour {
   public float scaleTime = 0.3f;
   public iTween.EaseType easeType = iTween.EaseType.easeInExpo;
 
+  public bool isLevelGoal = false;
   
   private void Awake () {
     m_board = Object.FindObjectOfType<Board>();

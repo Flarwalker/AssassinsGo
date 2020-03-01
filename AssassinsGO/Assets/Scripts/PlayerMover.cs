@@ -23,10 +23,6 @@ public class PlayerMover : MonoBehaviour {
 
   private void Start () {
     UpdateBoard();
-
-    if (m_board != null && m_board.PlayerNode != null) {
-      m_board.PlayerNode.InitNode();
-    }
   }
 
   // Moves the Player

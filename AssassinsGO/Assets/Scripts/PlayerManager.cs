@@ -4,13 +4,14 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerMover))]
 [RequireComponent(typeof(PlayerInput))]
-public class PlayerManager : MonoBehaviour {
+public class PlayerManager : TurnManager {
   // References the the Mover and Input Classes
   public PlayerMover playerMover;
   public PlayerInput playerInput;
 
   // Get the Mover and Input Objects
-  private void Awake () {
+  protected override void Awake () {
+    base.Awake();
     playerMover = GetComponent<PlayerMover>();
     playerInput = GetComponent<PlayerInput>();
     playerInput.InputEnabled = true;
@@ -18,7 +19,7 @@ public class PlayerManager : MonoBehaviour {
 
   // Checks for Movement and Moves the Player
   void Update() {
-    if (playerMover.isMoving) {
+    if (playerMover.isMoving || m_gameManager.CurrentTurn != Turn.Player) {
       return;
     }
 

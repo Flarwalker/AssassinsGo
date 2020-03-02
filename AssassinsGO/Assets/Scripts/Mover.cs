@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Mover : MonoBehaviour {
   // Is the Player currently moving?
@@ -20,6 +21,8 @@ public class Mover : MonoBehaviour {
   public float rotateTime = 0.5f;
 
   protected Node m_currentNode;
+
+  public UnityEvent finishMovementEvent;
 
   protected virtual void Awake () {
     m_board = Object.FindObjectOfType<Board>().GetComponent<Board>();

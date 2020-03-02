@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyMover))]
+[RequireComponent(typeof(EnemySensor))]
 public class EnemyManager : MonoBehaviour {
-  // Start is called before the first frame update
-  void Start() {
-    
-  }
+  private Board m_board;
+  private EnemyMover m_enemyMover;
+  private EnemySensor m_enemySenor;
 
-  // Update is called once per frame
-  void Update() {
-    
+  private void Awake () {
+    m_board = Object.FindObjectOfType<Board>().GetComponent<Board>();
+    m_enemyMover = GetComponent<EnemyMover>();
+    m_enemySenor = GetComponent<EnemySensor>();
   }
 }

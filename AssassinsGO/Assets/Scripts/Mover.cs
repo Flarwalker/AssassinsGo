@@ -111,8 +111,8 @@ public class Mover : MonoBehaviour {
     }
   }
 
-  private void FaceDestination() {
-    Vector3 relativePosition = destination = transform.position;
+  protected void FaceDestination() {
+    Vector3 relativePosition = destination - transform.position;
     Quaternion newRotation = Quaternion.LookRotation(relativePosition, Vector3.up);
 
     float newY = newRotation.eulerAngles.y;

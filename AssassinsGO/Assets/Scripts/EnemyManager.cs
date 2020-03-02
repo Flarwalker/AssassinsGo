@@ -25,7 +25,7 @@ public class EnemyManager : TurnManager {
 
     // attack
 
-    yield return new WaitForSeconds(0.5f);
+    yield return new WaitForSeconds(0f);
 
     //move
     m_enemyMover.MoveOneTurn();

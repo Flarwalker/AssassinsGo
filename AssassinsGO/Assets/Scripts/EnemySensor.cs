@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySensor : TurnManager {
+public class EnemySensor : MonoBehaviour {
   public Vector3 directionToSearch = new Vector3(0f, 0f, 2f);
 
   private Node m_nodeToSearch;

@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour {
   public UnityEvent startLevelEvent;
   public UnityEvent playLevelEvent;
   public UnityEvent endLevelEvent;
+  public UnityEvent LoseLevelEvent;
 
   private void Awake () {
     m_board = GameObject.FindObjectOfType<Board>().GetComponent<Board>();
@@ -92,6 +93,22 @@ public class GameManager : MonoBehaviour {
       m_isGameOver = IsWinner();
     }
 
+  }
+
+  public void LoseLevel() {
+    StartCoroutine(LoseLevelRoutine());
+  }
+
+  private IEnumerator LoseLevelRoutine() {
+    m_isGameOver = true;
+
+    if (LoseLevelEvent != null) {
+      LoseLevelEvent.Invoke();
+    }
+
+    yield return new WaitForSeconds(2f);
+
+    Debug.Log("LOSE! ==================================");
   }
   
   private IEnumerator EndLevelRoutine () {

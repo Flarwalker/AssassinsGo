@@ -21,13 +21,18 @@ public class EnemyManager : TurnManager {
   }
 
   private IEnumerator PlayTurnRoutine() {
-    m_enemySenor.UpdateSensor();
+    if (m_gameManager != null && m_gameManager.IsGameOver) {
+      m_enemySenor.UpdateSensor();
 
-    // attack
+      yield return new WaitForSeconds(0f);
 
-    yield return new WaitForSeconds(0f);
+      if (m_enemySenor.FoundPlayer) {
+        //attack
 
-    //move
-    m_enemyMover.MoveOneTurn();
+        m_gameManager.LoseLevel();
+      } else {
+        m_enemyMover.MoveOneTurn();
+      }
+    }
   }
 }
